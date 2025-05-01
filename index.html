@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Боречка — твой кактус</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    canvas {
+      border: 1px solid #ccc;
+      margin-top: 20px;
+      background: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>Привет, я Боречка!</h1>
+  <p>Если ты не куришь, я становлюсь сильнее!</p>
+
+  <canvas id="cactusCanvas" width="300" height="300"></canvas>
+
+  <script>
+    const canvas = document.getElementById("cactusCanvas");
+    const ctx = canvas.getContext("2d");
+
+    const image = new Image();
+    image.src = "https://i.imgur.com/Zf3qGhS.png";
+
+    image.onload = () => {
+      ctx.drawImage(image, 50, 50, 200, 200);
+    };
+  </script>
+</body>
+</html>
