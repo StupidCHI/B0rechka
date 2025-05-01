@@ -2,20 +2,35 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Боречка</title>
 </head>
-<body style="text-align: center; padding-top: 100px; font-family: sans-serif;">
+<body style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; font-family: sans-serif;">
+
   <h1>Привет, я Боречка!</h1>
   <p>Если ты не куришь, я становлюсь сильнее!</p>
 
   <!-- Telegram Login Widget -->
   <script async src="https://telegram.org/js/telegram-widget.js?7"
-          data-telegram-login="B0rechkabot" 
-          data-size="large"
-          data-userpic="true"
-          data-request-access="write"
-          data-userpic="true">
+    data-telegram-login="B0rechkabot"
+    data-size="large"
+    data-userpic="true"
+    data-request-access="write"
+    data-radius="10"
+    data-lang="ru"
+    data-onauth="onTelegramAuth(user)">
   </script>
+
+  <!-- Подпись -->
+  <p style="margin-top: 40px; font-size: 12px; color: gray;">v0.1 beta</p>
+
+  <!-- Скрипт обработки (в будущем будет развиваться) -->
+  <script>
+    function onTelegramAuth(user) {
+      console.log("Пользователь вошел:", user);
+      alert(`Привет, ${user.first_name}!`);
+    }
+  </script>
+
 </body>
 </html>
